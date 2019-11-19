@@ -18,6 +18,8 @@ you need to modify dependency path in CmakeList file.
 
 test hardware：1080Ti
 
+- TensorRT: detect_time : 12.2, classify_time : 1.1
+
 ![](./result/result.jpg)
 
 ## Package
