@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hbk/project/goggleMaskRt/interface/goggleMaskAPI.h
+string
+-
+vector
+-
+opencv2/opencv.hpp
+-
+
+/home/hbk/project/goggleMaskRt/interface/main.cpp
+vector
+-
+string
+-
+iostream
+-
+fstream
+-
+timer.h
+/home/hbk/project/goggleMaskRt/interface/timer.h
+goggleMaskAPI.h
+/home/hbk/project/goggleMaskRt/interface/goggleMaskAPI.h
+
+/home/hbk/project/goggleMaskRt/interface/timer.h
+chrono
+-
+

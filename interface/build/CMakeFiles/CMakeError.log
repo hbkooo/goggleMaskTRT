@@ -1,0 +1,189 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f94e5/fast && /usr/bin/make -f CMakeFiles/cmTC_f94e5.dir/build.make CMakeFiles/cmTC_f94e5.dir/build
+make[1]: Entering directory '/home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f94e5.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_f94e5.dir/src.c.o   -c /home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_f94e5
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f94e5.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_f94e5.dir/src.c.o  -o cmTC_f94e5 
+CMakeFiles/cmTC_f94e5.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x5b): undefined reference to `pthread_join'
+src.c:(.text+0x6f): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_f94e5.dir/build.make:86: recipe for target 'cmTC_f94e5' failed
+make[1]: *** [cmTC_f94e5] Error 1
+make[1]: Leaving directory '/home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_f94e5/fast' failed
+make: *** [cmTC_f94e5/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8fa9f/fast && /usr/bin/make -f CMakeFiles/cmTC_8fa9f.dir/build.make CMakeFiles/cmTC_8fa9f.dir/build
+make[1]: Entering directory '/home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8fa9f.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_8fa9f.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8fa9f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8fa9f.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_8fa9f.dir/CheckFunctionExists.c.o  -o cmTC_8fa9f -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_8fa9f.dir/build.make:86: recipe for target 'cmTC_8fa9f' failed
+make[1]: *** [cmTC_8fa9f] Error 1
+make[1]: Leaving directory '/home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_8fa9f/fast' failed
+make: *** [cmTC_8fa9f/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2bf47/fast && /usr/bin/make -f CMakeFiles/cmTC_2bf47.dir/build.make CMakeFiles/cmTC_2bf47.dir/build
+make[1]: Entering directory '/home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2bf47.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_2bf47.dir/src.c.o   -c /home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_2bf47
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2bf47.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_2bf47.dir/src.c.o  -o cmTC_2bf47 
+CMakeFiles/cmTC_2bf47.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x5b): undefined reference to `pthread_join'
+src.c:(.text+0x6f): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_2bf47.dir/build.make:86: recipe for target 'cmTC_2bf47' failed
+make[1]: *** [cmTC_2bf47] Error 1
+make[1]: Leaving directory '/home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_2bf47/fast' failed
+make: *** [cmTC_2bf47/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d990c/fast && /usr/bin/make -f CMakeFiles/cmTC_d990c.dir/build.make CMakeFiles/cmTC_d990c.dir/build
+make[1]: Entering directory '/home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d990c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_d990c.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d990c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d990c.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_d990c.dir/CheckFunctionExists.c.o  -o cmTC_d990c -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_d990c.dir/build.make:86: recipe for target 'cmTC_d990c' failed
+make[1]: *** [cmTC_d990c] Error 1
+make[1]: Leaving directory '/home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_d990c/fast' failed
+make: *** [cmTC_d990c/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a9577/fast && /usr/bin/make -f CMakeFiles/cmTC_a9577.dir/build.make CMakeFiles/cmTC_a9577.dir/build
+make[1]: Entering directory '/home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a9577.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_a9577.dir/src.c.o   -c /home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a9577
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a9577.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_a9577.dir/src.c.o  -o cmTC_a9577 
+CMakeFiles/cmTC_a9577.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x5b): undefined reference to `pthread_join'
+src.c:(.text+0x6f): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_a9577.dir/build.make:86: recipe for target 'cmTC_a9577' failed
+make[1]: *** [cmTC_a9577] Error 1
+make[1]: Leaving directory '/home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_a9577/fast' failed
+make: *** [cmTC_a9577/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ac9be/fast && /usr/bin/make -f CMakeFiles/cmTC_ac9be.dir/build.make CMakeFiles/cmTC_ac9be.dir/build
+make[1]: Entering directory '/home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ac9be.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_ac9be.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ac9be
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac9be.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_ac9be.dir/CheckFunctionExists.c.o  -o cmTC_ac9be -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_ac9be.dir/build.make:86: recipe for target 'cmTC_ac9be' failed
+make[1]: *** [cmTC_ac9be] Error 1
+make[1]: Leaving directory '/home/hbk/project/goggleMaskRt/interface/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_ac9be/fast' failed
+make: *** [cmTC_ac9be/fast] Error 2
+
+
+
