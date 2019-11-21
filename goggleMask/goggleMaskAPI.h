@@ -27,6 +27,12 @@ struct FaceDetectInfo
     FacePts pts;
 };
 
+struct GoggleDetectInfo {
+    float score;
+    int label;             // 0--goggleMask, 1--goggle, 2--mask, 3--no
+    float x1, y1, x2, y2;  // face box : left-top point and right-bottom point
+};
+
 class GoggleMaskApi {
 
 protected:
@@ -80,6 +86,16 @@ public:
      */
     virtual void classifyFace(std::string faceImgPath, std::vector<float> &outputs) = 0;
     virtual void classifyFace(cv::Mat faceImg, std::vector<float> &outputs) = 0;
+
+
+    /**
+     * detect goggle_mask face
+     * @param faceImgPath : input face image path
+     * @param outputs : detect result
+     * @param faceThreshold : detect face threshold, default is 0.5
+     */
+    virtual void detectGoggle(std::string imgPath, std::vector<GoggleDetectInfo> &outputs, float faceThreshold = 0.5) = 0;
+    virtual void detectGoggle(cv::Mat img, std::vector<GoggleDetectInfo> &outputs, float faceThreshold = 0.5) = 0;
 
 };
 
