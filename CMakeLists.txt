@@ -23,7 +23,7 @@ add_definitions (-std=c++11 -O2 -fomit-frame-pointer -g -Wall)
 MESSAGE (STATUS "Build Option: -std=c++11 -O2 -fomit-frame-pointer -g -Wall")
 
 
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 3.1 REQUIRED)
 find_package(CUDA REQUIRED)
 find_package(PkgConfig)
 # find protobuf3.x
@@ -78,7 +78,8 @@ include_directories (
 ###############
 #添加源文件
 ###############
-AUX_SOURCE_DIRECTORY(./goggleMask DIR_SRCS)
+# AUX_SOURCE_DIRECTORY(./goggleMask DIR_SRCS)
+set(DIR_SRCS ./goggleMask/RetinaFace.cpp ./goggleMask/goggleMaskClassify.cpp)
 
 message(STATUS "source file : ${DIR_SRCS}")
 
@@ -103,16 +104,17 @@ if(USE_TENSORRT)
     #     file( GLOB  core_cuda_files  "./goggleMask/*.cu")
     # endif()
     AUX_SOURCE_DIRECTORY(./goggleMask/tensorrt DIR_SRCS_CUDA)
-    cuda_add_executable(goggleMask ${DIR_SRCS} ${DIR_SRCS_CUDA} ${core_cuda_files})
-
-    list(REMOVE_ITEM ./goggleMask/main.cpp ${DIR_SRCS} )
-    add_library(gogglemask SHARED ${DIR_SRCS} ${DIR_SRCS_CUDA} ${core_cuda_files})
-
+    cuda_add_executable(goggleMask ./goggleMask/main.cpp ${DIR_SRCS} ${DIR_SRCS_CUDA} ${core_cuda_files})
+    
     target_link_libraries(goggleMask
         ${OpenCV_LIBRARIES}
         glog boost_system
         cudnn cublas cudart
         nvcaffe_parser nvinfer
         nppig nppicc nppc nppidei nppist)
+
+    # list(REMOVE_ITEM ./goggleMask/main.cpp ${DIR_SRCS} )
+    add_library(gogglemask SHARED ${DIR_SRCS} ${DIR_SRCS_CUDA} ${core_cuda_files})
+
 endif()
 
