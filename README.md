@@ -3,6 +3,7 @@
 ## Environment
 - TensorRT-6.0.1.5
 - Cuda 9.0
+- OpenCV 3.1
 
 ## Demo
 ```
