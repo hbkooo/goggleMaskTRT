@@ -94,8 +94,8 @@ public:
      * @param outputs : detect result
      * @param faceThreshold : detect face threshold, default is 0.5
      */
-    virtual void detectGoggle(std::string imgPath, std::vector<GoggleDetectInfo> &outputs, float faceThreshold = 0.5) = 0;
-    virtual void detectGoggle(cv::Mat img, std::vector<GoggleDetectInfo> &outputs, float faceThreshold = 0.5) = 0;
+    //virtual void detectGoggle(std::string imgPath, std::vector<GoggleDetectInfo> &outputs, float faceThreshold = 0.5) = 0;
+    //virtual void detectGoggle(cv::Mat img, std::vector<GoggleDetectInfo> &outputs, float faceThreshold = 0.5) = 0;
 
 };
 
